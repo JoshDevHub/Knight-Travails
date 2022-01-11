@@ -19,4 +19,8 @@ class Board
       end
     end
   end
+
+  def filter_invalid_moves(move_list)
+    move_list.select(&board_grid)
+  end
 end
