@@ -10,7 +10,7 @@ class Square
     @pred = pred
   end
 
-  def visited?
-    !distance.nil?
+  def unvisited?
+    distance.nil?
   end
 end
