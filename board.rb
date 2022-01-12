@@ -13,7 +13,7 @@ class Board
     @board_grid = {}
     8.times do |y|
       8.times do |x|
-        key = x + y.i
+        key = [x, y]
         square_name = to_square_notation(key)
         board_grid[key] = Square.new(square_name)
       end
