@@ -19,8 +19,4 @@ class Board
       end
     end
   end
-
-  def filter_invalid_coords(coords_list)
-    coords_list.select(&board_grid)
-  end
 end
