@@ -2,7 +2,7 @@
 
 # it moves like a knight and ... quacks like a knight?
 class Knight
-  def find_moves(coordinate_position)
+  def generate_moves(coordinate_position)
     [
       coordinate_position + (1 + 2i),
       coordinate_position + (1 - 2i),
