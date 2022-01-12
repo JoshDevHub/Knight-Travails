@@ -54,5 +54,3 @@ class KnightTravails
     end
   end
 end
-
-p KnightTravails.new.knight_moves('D4', 'A1') # -> ['D4', 'C2', 'A1']
