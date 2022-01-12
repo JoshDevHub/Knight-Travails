@@ -13,6 +13,6 @@ module CoordinateTranslator
 
   def to_coordinate(square_notation)
     x, y = square_notation.chars
-    [FILE_NAMES[x], RANK_NAMES[y]]
+    [FILE_NAMES.index(x), RANK_NAMES.index(y)]
   end
 end
