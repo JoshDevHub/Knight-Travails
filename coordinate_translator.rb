@@ -6,13 +6,13 @@ module CoordinateTranslator
   RANK_NAMES = %w[1 2 3 4 5 6 7 8].freeze
 
   def to_square_notation(coordinate)
-    file_index = coordinate.real
-    rank_index = coordinate.imag
+    file_index = coordinate[0]
+    rank_index = coordinate[1]
     FILE_NAMES[file_index] + RANK_NAMES[rank_index]
   end
 
   def to_coordinate(square_notation)
     x, y = square_notation.chars
-    FILE_NAMES.index(x) + RANK_NAMES.index(y).i
+    [FILE_NAMES[x], RANK_NAMES[y]]
   end
 end
