@@ -20,7 +20,7 @@ class Board
     end
   end
 
-  def filter_invalid_moves(move_list)
-    move_list.select(&board_grid)
+  def filter_invalid_coords(coords_list)
+    coords_list.select(&board_grid)
   end
 end
