@@ -84,7 +84,7 @@ RSpec.describe KnightTravails do
 
       it "raises an error" do
         expect { path }
-          .to raise_error(KnightTravails::Position::InvalidPositionError)
+          .to raise_error(KnightTravails::InvalidPositionInputError)
           .with_message("Position values must be integers between the range of 0 and 7")
       end
     end
@@ -95,7 +95,7 @@ RSpec.describe KnightTravails do
 
       it "raises an error" do
         expect { path }
-          .to raise_error(KnightTravails::Position::InvalidPositionError)
+          .to raise_error(KnightTravails::InvalidPositionInputError)
           .with_message("Position values must be integers between the range of 0 and 7")
       end
     end

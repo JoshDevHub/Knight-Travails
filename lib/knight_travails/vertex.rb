@@ -13,6 +13,8 @@ module KnightTravails
       public_send(adj_method).map { Vertex.new(it, pred: self) }
     end
 
+    def hash = "#{self.class}: #{self}".hash
+
     def path_to_target
       path = [self]
       path << path.last.pred while path.last.pred

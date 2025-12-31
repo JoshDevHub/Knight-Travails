@@ -14,13 +14,6 @@ module KnightTravails
 
     VALID_RANGE = (0...8)
 
-    class InvalidPositionError < StandardError
-      def message
-        min, max = VALID_RANGE.minmax
-        "Position values must be integers between the range of #{min} and #{max}"
-      end
-    end
-
     KNIGHT_JUMP_OFFSETS = [
       [1, 2], [1, -2], [-1, 2], [-1, -2],
       [2, 1], [2, -1], [-2, 1], [-2, -1]
@@ -29,11 +22,11 @@ module KnightTravails
     def to_a = [row, column]
 
     def ==(other)
-      row == other.row && column == other.column
+      other.is_a?(Position) && row == other.row && column == other.column
     end
     alias eql? ==
 
-    def hash = "#{self.class}: #{row},#{column}".hash
+    def to_s = to_a.join(", ")
 
     def +(other) = Position.new(row + other.row, column + other.column)
 
@@ -41,8 +34,6 @@ module KnightTravails
       KNIGHT_JUMP_OFFSETS.map { it + self }.select(&:valid?)
     end
 
-    def valid?
-      VALID_RANGE.cover?(row) && VALID_RANGE.cover?(column)
-    end
+    def valid? = to_a.all?(VALID_RANGE)
   end
 end
